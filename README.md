@@ -59,6 +59,14 @@ This issue is related to an erroneous scheme for accumulating fees and affected 
 
 See comments [here](https://github.com/sherlock-audit/2024-02-leverage-contracts-judging/issues/40#issuecomment-1982026558)
 
+**0xDetermination**
+
+Fix looks good, a new internal function `_harvest()` has been added and is called when new borrows are added to an existing position.
+
+**sherlock-admin4**
+
+The Lead Senior Watson signed off on the fix.
+
 # Issue M-1: Entrance fees are distributed wrongly in loans with multiple lenders 
 
 Source: https://github.com/sherlock-audit/2024-02-leverage-contracts-judging/issues/39 
@@ -288,6 +296,14 @@ Escalations have been resolved successfully!
 
 Escalation status:
 - [qmdddd](https://github.com/sherlock-audit/2024-02-leverage-contracts-judging/issues/39/#issuecomment-1986797762): accepted
+
+**0xDetermination**
+
+Fix looks good, fee collection has been reworked and entrance fees are added directly to the lender's reward balance.
+
+**sherlock-admin4**
+
+The Lead Senior Watson signed off on the fix.
 
 # Issue M-2: A borrower eligible for liquidation can pay an improperly large amount of fees, and may be unfairly liquidated 
 
@@ -560,4 +576,12 @@ Escalations have been resolved successfully!
 
 Escalation status:
 - [0xDetermination](https://github.com/sherlock-audit/2024-02-leverage-contracts-judging/issues/40/#issuecomment-1986871881): accepted
+
+**0xDetermination**
+
+Fix looks good, collection of fees in emergency mode `repay()` has been reworked. Notably, `dailyRateCollateralBalance` is no longer set to zero.
+
+**sherlock-admin4**
+
+The Lead Senior Watson signed off on the fix.
 
